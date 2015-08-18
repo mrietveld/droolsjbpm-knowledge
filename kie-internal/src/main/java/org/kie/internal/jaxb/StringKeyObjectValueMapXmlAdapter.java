@@ -50,8 +50,7 @@ public class StringKeyObjectValueMapXmlAdapter extends XmlAdapter<StringKeyObjec
         for(Entry<String, Object> entry : map.entrySet()) {
             Object value = entry.getValue();
             String key = entry.getKey();
-            StringKeyObjectValueEntry xmlEntry = createJaxbStringObjectMapEntry(value, key);
-            xmlMap.addEntry(xmlEntry);
+            xmlMap.put(key, value);
         }
         return xmlMap;
     }
