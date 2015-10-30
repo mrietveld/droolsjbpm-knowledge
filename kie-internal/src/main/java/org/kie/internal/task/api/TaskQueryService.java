@@ -99,9 +99,12 @@ public interface TaskQueryService {
 
     Task getTaskByWorkItemId(long workItemId);
 
+    Task getTaskByWorkItemId(String userId, long workItemId);
+
     Task getTaskInstanceById(long taskId);
 
     List<Long> getTasksByProcessInstanceId(long processInstanceId);
+    List<Long> getTasksByProcessInstanceId(String userId, long processInstanceId);
 
     Map<Long, List<OrganizationalEntity>> getPotentialOwnersForTaskIds(List<Long> taskIds);
 
@@ -120,11 +123,7 @@ public interface TaskQueryService {
     @Deprecated
     List<TaskSummary> getTasksByVariousFields( String userId, Map<String, List<?>> parameters, boolean union);
 
-
-    /**
-     *
-     * @param queryWhere
-     * @return
-     */
     List<TaskSummary> query( String userId, Object queryWhere );
+    List<Task> queryTasks( String userId, Object queryWhere );
+    List<Long> queryTaskIds( String userId, Object queryWhere );
 }

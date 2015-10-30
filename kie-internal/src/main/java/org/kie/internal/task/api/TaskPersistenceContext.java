@@ -148,4 +148,8 @@ public interface TaskPersistenceContext {
      */
 
     List<TaskSummary> doTaskSummaryCriteriaQuery(String userId, UserGroupCallback userGroupCallback, Object queryWhere);
+
+    List<Task> doTaskCriteriaQuery( String userId, UserGroupCallback userGroupCallback, Object queryWhere );
+
+    List<Long> doTaskIdQuery( String userId, UserGroupCallback userGroupCallback, Object queryWhere );
 }
