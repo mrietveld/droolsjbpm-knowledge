@@ -58,6 +58,11 @@
         "old": "method parameter void org.kie.api.runtime.ClassObjectFilter::<init>(===java.lang.Class===)",
         "new": "method parameter void org.kie.api.runtime.ClassObjectFilter::<init>(===java.lang.Class<?>===)",
         "justification": "Using generics is generally preferable."
+      },
+      {
+        "code" : "java.method.removed",
+        "old" : "method void org.kie.api.runtime.process.EventListener::signalEvent(java.lang.String, java.lang.Object)",
+        "justification" : "The .signalEvent(String, Object) method has been moved to the (parent) EventSignallable interface."
       }
     ]
   }
